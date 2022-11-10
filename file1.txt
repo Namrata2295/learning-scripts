@@ -1,0 +1,6 @@
+this file is from local repo
+this is change in file1 from vs on 10th nov
+branch
+git status
+git log
+git branch
