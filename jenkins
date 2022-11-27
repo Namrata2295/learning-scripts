@@ -1,0 +1,29 @@
+pipeline{
+    agent any
+    tools{
+        maven 'm3'
+        jdk 'jdk8'
+    }
+    envirnment{
+        COMPANY_CODE='PRAGRA'
+    }
+    stages{
+        stages('Compile'){
+            steps{
+                sh 'mvn compile'
+            }
+            
+        }
+        stages('test'){
+            steps{
+                sh 'mvn test'
+            }
+            
+        }
+    }
+    post{
+        success{
+            slacksend channel:'namratapatel2202', message:"project jenkins $(JOB_NAME) is successfull"
+        }
+    }
+}
