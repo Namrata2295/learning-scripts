@@ -1,11 +1,15 @@
 pipeline{
     agent any
     tools{
-        maven 'm3'
+        maven 'm368'
         jdk 'jdk8'
     }
     envirnment{
         COMPANY_CODE='PRAGRA'
+    }
+    triggers {
+        cron('H */4 * * 1-5')
+        pollSCM('H */4 * * 1-5')
     }
     stages{
         stages('Compile'){
@@ -23,7 +27,7 @@ pipeline{
     }
     post{
         success{
-            slacksend channel:'namratapatel2202', message:"project jenkins $(JOB_NAME) is successfull"
+            slacksend channel:'testing', message:"project jenkins ${JOB_NAME} is successfull"
         }
     }
 }
