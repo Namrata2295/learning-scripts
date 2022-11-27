@@ -4,7 +4,7 @@ pipeline{
         maven 'm368'
         jdk 'jdk8'
     }
-    envirnment{
+    environment{
         COMPANY_CODE='PRAGRA'
     }
     triggers {
@@ -12,13 +12,13 @@ pipeline{
         pollSCM('H */4 * * 1-5')
     }
     stages{
-        stages('Compile'){
+        stage('Compile'){
             steps{
                 sh 'echo compile'
             }
             
         }
-        stages('test'){
+        stage('test'){
             steps{
                 sh 'echo test'
             }
