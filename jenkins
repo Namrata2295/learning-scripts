@@ -5,7 +5,7 @@ pipeline{
         jdk 'jdk'
     }
     options{
-        buildDiscarder(logRotator(numToKeepStr: '3'))
+        buildDiscarder(logRotator(numToKeepStr: '5'))
     }
     environment{
         COMPANY_CODE='PRAGRA-123'
