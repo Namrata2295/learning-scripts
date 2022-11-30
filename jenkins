@@ -8,15 +8,18 @@ pipeline{
         stage('Compile'){
             steps{
                  echo 'compile'
-            }
-            
-        }
+                 }
+               }
         stage('test'){
             steps{
                 echo 'test'
+                }
             }
-            
-        }
+         stage('deploy'){
+            steps{
+                echo 'deploy'
+                }
+            }
     }
     
 }
