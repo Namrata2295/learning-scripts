@@ -1,25 +1,33 @@
 pipeline{
     agent any
        tools {
-        maven 'm3'
-        jdk 'jdk8'
+        maven 'mvn'
+        jdk 'jdk'
     }
-        stages{
+    environment{
+        COMPANY_CODE='PRAGRA-123'
+           }
+    stages{
         stage('Compile'){
             steps{
-                 echo 'compile'
+                 sh 'mvn compile'
                  }
                }
         stage('test'){
             steps{
-                echo 'test'
+                sh 'mvn test'
                 }
             }
          stage('deploy'){
             steps{
-                echo 'deploy'
+                sh 'mvn deploy'
                 }
             }
+    }
+    post{
+        success{
+            slackSend channel: 'devops-oct-22', message: "build for project $JOB_NAME is successfull"
+        }
     }
     
 }
