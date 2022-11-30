@@ -30,6 +30,9 @@ pipeline{
         success{
             slackSend channel: 'testing', message: "build for project ${BUILD_NUMBER} is successfull"
         }
+        always{
+            mail bcc: '', body: 'Hello from Jenkins', cc: 'vasu.sharma1227@gmail.com', from: '', replyTo: '', subject: 'Build Status for ${JOB_NAME} is ${JOB_STATUS}', to: 'namratapatel2202@gmail.com'
+        }
     }
 
    }
