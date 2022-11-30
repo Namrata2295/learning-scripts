@@ -1,10 +1,7 @@
 pipeline{
     agent any
-<<<<<<< HEAD
-       tools {
-=======
     tools {
->>>>>>> 4377c552c10a3775fdd322307a587d7dd2656f25
+
         maven 'mvn'
         jdk 'jdk'
     }
@@ -27,15 +24,12 @@ pipeline{
                 sh 'mvn deploy'
                 }
             }
-<<<<<<< HEAD
+
     }
     post{
         success{
             slackSend channel: 'devops-oct-22', message: "build for project $JOB_NAME is successfull"
         }
     }
-=======
+
    }
->>>>>>> 4377c552c10a3775fdd322307a587d7dd2656f25
-    
-}
