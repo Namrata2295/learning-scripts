@@ -1,9 +1,11 @@
 pipeline{
     agent any
     tools {
-
         maven 'mvn'
         jdk 'jdk'
+    }
+    options{
+        buildDiscarder(logRotator(numToKeepStr: '3'))
     }
     environment{
         COMPANY_CODE='PRAGRA-123'
@@ -35,4 +37,4 @@ pipeline{
         }
     }
 
-   }
+}
