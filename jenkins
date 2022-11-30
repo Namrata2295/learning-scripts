@@ -6,6 +6,7 @@ pipeline{
     }
     parameters { 
         string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') 
+        choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '')
         }
     options{
         buildDiscarder(logRotator(numToKeepStr: '5'))
