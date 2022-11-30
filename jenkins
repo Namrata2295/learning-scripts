@@ -28,7 +28,7 @@ pipeline{
     }
     post{
         success{
-            slackSend channel: 'devops-oct-22', message: "build for project $JOB_NAME is successfull"
+            slackSend channel: 'testing', message: "build for project $JOB_NAME is successfull"
         }
     }
 
