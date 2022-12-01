@@ -32,11 +32,6 @@ pipeline{
             }
 
     }
-    post{
-        success{
-            slackSend channel: 'testing', message: "build for project ${BUILD_NUMBER} is successfull"
-        }
-        
-    }
+    
 
 }
